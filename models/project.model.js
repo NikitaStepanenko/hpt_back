@@ -14,8 +14,8 @@ const projectSchema = new Schema(
     //NEW
     group:{ type: Array, required: false },
     name: { type: String, required: true },
-    comunication:{ type: String, required: true },
-    messager:{ type: Array, required: false },
+    communication:{ type: String, required: true },
+    messenger:{ type: Array, required: false },
     startDate:{ type: String, required: true },
     endDate:{ type: String, required: false },
     type:{ type: String, required: true },
@@ -26,7 +26,7 @@ const projectSchema = new Schema(
     paymentAmount:{ type: String, required: true },
     load:{ type: String, required: true},
     description: { type: String, required: false },
-    resources: { type: Array, required: true },
+    resources: { type: Array, required: false },
     history:{ type: String, required: false },
     projectImage: {type: String, required:false},
     developers: {type: Array, required:false}

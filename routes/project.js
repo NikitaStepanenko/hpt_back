@@ -216,7 +216,7 @@ try {
 router.post("/addproject",verify, upload.single("projectImage") ,async (req, res) => {
   try {
     if( req.file === undefined){
-      //console.log("REQ>BODY",req.body)
+      console.log("REQ>BODY",req.body)
       const newproject = new Project({
         _id: new mongoose.Types.ObjectId(),
         status: req.body.status,
@@ -225,8 +225,8 @@ router.post("/addproject",verify, upload.single("projectImage") ,async (req, res
         duration: req.body.duration,
         group: req.body.group,
         name: req.body.name,
-        comunication: req.body.comunication,
-        messager: req.body.messager,
+        communication: req.body.communication,
+        messenger: req.body.messenger,
         startDate: req.body.startDate,
         endDate: req.body.endDate,
         type: req.body.type,
@@ -242,8 +242,8 @@ router.post("/addproject",verify, upload.single("projectImage") ,async (req, res
         developers: req.body.developers,
       })
       const { userId } = res.locals;
-      //console.log("NEWPROJECT",newproject)
-      const user = await User.findById(userId);
+      console.log("NEWPROJECT",newproject)
+      // const user = await User.findById(userId);
       //if (!user.isAdmin) throw 'not admin'
       const savedProject = await newproject.save()
       res.json(newproject)
